@@ -1,0 +1,52 @@
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+ 
+    <p>
+      <label for="firstname">First Name</label>
+      <input type="text" name="firstname" ngModel>
+    </p>
+   
+    <p>
+      <label for="lastname">Last Name</label>
+      <input type="text" name="lastname" ngModel>
+    </p>
+   
+    <p>
+      <label for="email">Email </label>
+      <input type="text" id="email" name="email" ngModel>
+    </p>
+   
+    <p>
+      <label for="gender">Gender</label>
+      <input type="radio" value="male" name="gender" ngModel> Male
+      <input type="radio" value="female" name="gender" ngModel> Female
+    </p>
+   
+    <select name="country" ngModel>
+      <option>India</option>
+      <option>Australia</option>
+      <option>England</option>
+      <option>NewZealand</option>
+    </select>
+   
+    <p>
+      <button type="submit">Submit</button>
+    </p>
+    
+  </form>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Gender</th>
+      <th>Country</th>
+    </tr>
+    <tr *ngFor = "let detail of details">
+      <td>{{detail.firstname}}</td>
+      <td>{{detail.email}}</td>
+      <td>{{detail.gender}}</td>
+      <td>{{detail.country}}</td>
+
+    </tr>
+  </table>
+  
